@@ -52,6 +52,6 @@ void Solution(ListNode &tp1, ListNode &tp2) {
 int main() {
 	ListNode ll;
 	ll.add_front(4); ll.add_back(40); ll.add_back(400);
-
+	
 	return 0;
 }

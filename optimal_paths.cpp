@@ -2,17 +2,17 @@
 using namespace std;
 
 int maxPath(vector< vector<int > > &v, int r, int c,vector< vector<int > > &dp) {
-	
-	if(r<0 || r>2|| c<0 || c>2) 
+	dp[2][0] = 0;
+	if(r<0 || r>=3|| c<0 || c>=3) 
 		return 0;
 	else if(dp[r][c] !=-1)
 		return dp[r][c];
-	else if(r == 2 && c==0)
-		return v[r][c];
+	else if(r!=2 && c!=0)
+		return dp[r][c] = v[r][c] + max(maxPath(v,r,c-1,dp), maxPath(v,r+1,c,dp));
+	else if(r==2)
+		return dp[r][c] = v[r][c] + maxPath(v,r,c-1,dp);
 	else
-		return dp[r][c] = v[r][c] + max(maxPath(v,r,c-1,dp), maxPath(v,r,c+1,dp));
-		cout << "For this" << r << " " << c << " " << dp[r][c] << endl;
-		// return v[r][c] + max(maxPath(v,r,c-1,targetR, targetC), maxPath(v,r+1,c, targetR, targetC));
+		return dp[r][c] = v[r][c] + maxPath(v,r+1,c,dp);
 }
 
 int main() {

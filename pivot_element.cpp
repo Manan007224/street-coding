@@ -1,18 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// int BS(vector<int> &v, int el, int start, int end) {
-// 	if(start>end)
-// 		return -1;
-// 	int mid = (start+end)/2;
-// 	if(v[mid]==el)
-// 		return mid;
-// 	else if(v[mid]>el)
-// 		return BS(v,el,start,mid-1);
-// 	else
-// 		return BS(v,el,mid+1,end);
-// }
-
 int find(vector<int> &v, int key, int start, int end){
 	if(start>end)
 		return -1;

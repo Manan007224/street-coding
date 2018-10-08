@@ -1,0 +1,75 @@
+String
+Reverse Words in a string
+Longest Palindromic Substring - T
+ZigZag Conversion - T
+string to Integer(atoi) - T
+regex matching
+Integer to roman
+roman to integer
+generate parenthesis
+substring with concatenation of all words
+wildcard matching
+
+Array
+2Sum - T
+Median of two sorted arrays - T
+3sum closest - T
+remove element - T
+repeated integers(amazon interview) - T
+search in rotated array
+trapping rain water - T
+first and last position in rotated array
+search insert position
+implement strStr()
+group anagrams
+merge intervals
+
+Linked list
+remove nth node from linked list
+merge k sorted list
+garage interview question
+swap nodes in pairs
+reverse linked list 2
+rotate list
+reverse nodes in k-group
+partition list
+remove duplicates from sorted list 1
+remove duplicates from sorted list 2
+convert sorted list to bst
+copy list with random pointer
+linked list cycle 1
+linked list cycle 2
+reorder list
+insertion sort list
+
+Hash tables
+longest substring without repeating charachters - T
+4sum
+valid sudoku - T
+sudoku solver
+group anagrams
+minimum window substring
+binary tree inorder traversal
+max points on a line
+fraction to recurring decimal
+repeated DNA Sequence
+maximum rectangle
+palindrome pairs
+
+Binary Search
+divide two integers
+pow(x,n)
+search in 2d matrix
+search in rotated array 2
+find minimum in rotated array 1
+find minimum in rotated array 2
+find peak element
+dungeon game
+minimum size subarray sum
+count complete tree nodes
+kth smallest node in bst
+search in 2d matrix 2
+russian doll envolopes
+maximum sum of rectangles no larger than K
+intersection of 2 arrays 1 and 2
+H-index 2

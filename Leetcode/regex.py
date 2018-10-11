@@ -20,4 +20,19 @@ while True:
 	ls = [int(x) for x in input().split(' ')]
 	output=[]
 	permut(ls, 0, len(ls)-1, output, length)
-	print(output)
+    print(output)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

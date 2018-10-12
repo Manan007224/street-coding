@@ -11,26 +11,35 @@ class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int m, int n) {
         ListNode* tp = head;
-        myReverse(&tp,2,4);
+        myReverse(&tp,1,2);
         return tp;
     }
     void myReverse(ListNode **head, int m, int n){
+    	cout<<n-m<<endl;
     	int rr = 0;
     	ListNode* temp = *head;
     	while(rr++<m-2)
     		temp=temp->next;
     	int rm=m;
-    	ListNode* prev = temp->next;
-    	ListNode* after = temp->next;
-    	ListNode* curr = temp->next->next;
-    	while(rm++<n){
-    		after=curr->next;
-    		curr->next=prev;
-    		prev=curr;
-    		curr=after;
+    	if((n-m)<=1){
+    		ListNode* curr=temp;
+    		temp=temp->next->next;
+    		temp->next=curr;
     	}
-    	temp->next->next=after;
-    	temp->next=prev;
+    	else{
+    		ListNode* prev = temp->next;
+	    	ListNode* after = temp->next;
+	    	ListNode* curr = temp->next->next;
+	    	while(rm++<n){
+	    		after=curr->next;
+	    		curr->next=prev;
+	    		prev=curr;
+	    		curr=after;
+	    	}
+	    	temp->next->next=after;
+	    	temp->next=prev;
+    	}
+    	
     }	
 };
 
@@ -42,7 +51,7 @@ int main(){
 	reverse->next->next->next=new ListNode(4);
 	reverse->next->next->next->next=new ListNode(5);
 	Solution sln;
-	ListNode* ans = sln.reverseBetween(reverse, 2, 4);
+	ListNode* ans = sln.reverseBetween(reverse, 1, 2);
 	while(ans!=NULL){
 		cout<<ans->val<<endl;
 		ans=ans->next;

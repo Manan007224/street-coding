@@ -19,28 +19,26 @@ public:
         else{
         	ListNode tp(0);
         	auto current = &tp;
-       		ListNode *a1=l1;
-       		ListNode *a2=l2;
-       		while(a1!=NULL&&a2!=NULL){
-       			if(a1->val<a2->val){
-       				current->next=new ListNode(a1->val);
-       				a1=a1->next;
+       		while(l1!=NULL&&l2!=NULL){
+       			if(l1->val<=l2->val){
+       				current->next=l1;
+       				l1=l1->next;
        				current=current->next;
        			}
        			else{
-       				current->next=new ListNode(a2->val);
-       				a2=a2->next;
+       				current->next=l2;
+       				l2=l2->next;
        				current=current->next;
        			}
        		}
-       		while(a1!=NULL){
-       			current->next=new ListNode(a1->val);
-       			a1=a1->next;
+       		while(l1!=NULL){
+       			current->next=new ListNode(l1->val);
+       			l1=l1->next;
        			current=current->next;
        		}
-       		while(a2!=NULL){
-       			current->next=new ListNode(a2->val);
-       			a2=a2->next;
+       		while(l2!=NULL){
+       			current->next=new ListNode(l2->val);
+       			l2=l2->next;
        			current=current->next;
        		}
        		return tp.next;

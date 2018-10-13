@@ -33,7 +33,7 @@ int main(){
 	string test = "1123";
 	lst output;
 	int ans = code(test, output);
-	for(auto& it: output)
+	for(auto it: output)
 		cout<<it<<endl;
 	return 0; 
 }

@@ -21,12 +21,12 @@ Node* flatten(Node* curr){
 	if(right!=NULL){
 		curr->l=right;
 		curr->r=NULL;
-		curr = flatten(right);
+		curr=flatten(right);
 	}
 	if(left!=NULL){
 		curr->l=left;
 		curr->r=NULL;
-		curr = flatten(left);
+		curr=flatten(left);
 	}
 	return curr;
 }

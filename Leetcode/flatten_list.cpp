@@ -14,22 +14,44 @@ Node* newNode(string data){
 	tp->r=NULL;
 }
 
-void flatten(Node** head){
-	stack<Node*> st;
-	Node* tp = *head;
-	st.push(tp);
-	while(!st.empty()){
-		Node* curr = st.top();
-		st.pop();
-		if(curr->l!=NULL)
-			st.push(curr->l);
-		if(curr->r!=NULL)
-			st.push(curr->r);
-		tp->l=curr;
-		tp->r=NULL;
-		tp=tp->l;
+
+Node* flatten(Node* curr){
+	Node* left = curr->l;
+	Node* right = curr->r;
+	if(right!=NULL){
+		curr->l=right;
+		curr->r=NULL;
+		curr = flatten(right);
 	}
+	if(left!=NULL){
+		curr->l=left;
+		curr->r=NULL;
+		curr = flatten(left);
+	}
+	return curr;
 }
+
+void runner(Node** root){
+	Node* curr = *root;
+	flatten(*root);
+}
+
+// void flatten(Node** head){
+// 	stack<Node*> st;
+// 	Node* tp = *head;
+// 	st.push(tp);
+// 	while(!st.empty()){
+// 		Node* curr = st.top();
+// 		st.pop();
+// 		if(curr->l!=NULL)
+// 			st.push(curr->l);
+// 		if(curr->r!=NULL)
+// 			st.push(curr->r);
+// 		tp->l=curr;
+// 		tp->r=NULL;
+// 		tp=tp->l;
+// 	}
+// }
 
 int main(){
 	Node* root=newNode("a");
@@ -44,8 +66,8 @@ int main(){
 	root->l->r->l->l=newNode("j");
 	root->l->r->r=newNode("h");
 	root->l->r->r->l=newNode("i");
-	flatten(&root);
 	Node* ans = root;
+	flatten(root);
 	while(ans!=NULL){
 		cout<<ans->val<<endl;
 		ans=ans->l;

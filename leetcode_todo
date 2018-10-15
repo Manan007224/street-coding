@@ -44,17 +44,19 @@ insertion sort list
 
 Hash tables
 longest substring without repeating charachters - T
-4sum
+4sum - t
 valid sudoku - T
 sudoku solver
 group anagrams
 minimum window substring
 binary tree inorder traversal
-max points on a line
-fraction to recurring decimal
-repeated DNA Sequence
-maximum rectangle
-palindrome pairs
+max points on a line - t
+fraction to recurring decimal - t
+repeated DNA Sequence - t
+maximum rectangle - t
+palindrome pairs - t
+brick wall - t 
+bulls and cows - t
 
 Binary Search
 divide two integers

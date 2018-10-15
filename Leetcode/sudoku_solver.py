@@ -33,7 +33,7 @@ class Solution:
 		def backtrack(r, c):
 			ll = len(board)
 
-			if r >= ll and c >= ll:
+			if r+1 >= ll and c+1 >= ll:
 				return True
 
 			for i in range(r,ll):
@@ -70,3 +70,4 @@ sudoku = [
 
 sln = Solution()
 sln.runner(sudoku)
+print(sudoku)

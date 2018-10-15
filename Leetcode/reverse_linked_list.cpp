@@ -7,18 +7,10 @@ struct ListNode{
 	ListNode(int x) : val(x), next(NULL) {}
 };
 
-
-
 class Solution{
 public:
 	ListNode *reverseList(ListNode *head){
-		ListNode * tp=head;
-		myreverse(&tp);
-		ListNode * curr=tp;
-		return tp;
-	}
-	void myreverse(ListNode **head){
-		ListNode * curr = *head;
+		ListNode * curr = head;
 		ListNode * prev = NULL;
 		ListNode * after = NULL;
 		while(curr!=NULL){
@@ -27,7 +19,8 @@ public:
 			prev=curr;
 			curr=after;
 		}
-		*head=prev;
+		head=prev;
+		return head;
 	}
 };
 

@@ -10,7 +10,6 @@ def max_array(nums):
 		k+=1
 
 	# Start evaluating the sum
-
 	for num in nums:
 		sum+=num
 		if sum in record1:

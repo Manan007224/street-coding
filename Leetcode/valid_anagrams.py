@@ -10,7 +10,6 @@ class Solution:
     		else:
     			anagram1.setdefault(str, [])
     			anagram1[str].append(str)
-
     	for str in t:
     		if str in anagram2:
     			anagram2[str].append(str)
@@ -24,7 +23,7 @@ class Solution:
     		else:
     			if anagram1[k] != anagram2[k]:
     				return False
-
+    				
     	return True				
 
 

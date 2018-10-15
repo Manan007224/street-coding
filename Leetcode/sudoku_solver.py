@@ -70,4 +70,4 @@ sudoku = [
 
 sln = Solution()
 sln.runner(sudoku)
-print(sudoku)
+print(sudoku)	

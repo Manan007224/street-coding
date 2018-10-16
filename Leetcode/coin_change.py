@@ -32,10 +32,10 @@ class Solution:
 			return dp[val]
 
 		recur(amount, dp, coins)
-
+		print(dp)
 		return dp[amount]
 
-coins = [2147483647]
-amount = 2
+coins = [186,419,83,408]
+amount = 6249
 sln = Solution()
 print(sln.coinChange(coins,amount))

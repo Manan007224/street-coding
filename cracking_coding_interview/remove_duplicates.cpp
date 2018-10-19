@@ -8,18 +8,17 @@ void remove_duplicates(string &s){
 		int j=0;
 		while(j<=checked){
 			if(s[i]==s[j]){
-				s[i]='0';
+				s[i]='\0';
 				break;
 			}
 			j++;
 		}
 		checked=i;
 	}
-	s.erase(remove(s.begin(), s.end(), '0'),s.end());
 }
 
 int main(){
-	string str = "aaaa";
+	string str = "aaabbcckl";
 	remove_duplicates(str);
 	cout<<str<<endl;
 	return 0;

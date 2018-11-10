@@ -18,7 +18,7 @@ ll cost(lst &stalls, ll cows, ll mn, ll cs){
 
 
 int main(){
-	lst stalls={1,2,4,8,9};
+	//lst stalls={1,2,4,8,9};
 	int t; cin>>t;
 	while(t-- >0){
 		int n,c;

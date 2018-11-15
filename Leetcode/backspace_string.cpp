@@ -1,20 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// string test(string str){
-// 	int i=0; int j=0;
-// 	while(j<str.length()){
-// 		if(str[j]=='#'){
-// 			if(i>0) i--;
-// 			j++;
-// 		} else{
-// 			str[i++]=str[j++];
-// 		}
-// 	}
-
-// 	return (str.erase(i,str.length()-i));
-// }
-
 class Solution{
 public:
 	bool backspaceCompare(string S, string T){

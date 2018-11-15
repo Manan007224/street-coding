@@ -3,6 +3,7 @@ using namespace std;
 typedef pair<int,int> pt;
 typedef vector<pair<int,int>> lst_p;
 typedef vector<int> lst;
+typedef numeric_limits<int>::min() smin;
 
 bool sortbydiff(pt &pt1, pt &pt2){return ((pt1.second)<(pt2.second));}
 
@@ -20,7 +21,7 @@ int cost(lst_p &jobs, lst &dp, int curr){
 			break;
 		}
 	}
-	int mx=(!flag)?(fn.second-fn.first):numeric_limits<int>::min();
+	int mx=(!flag)?(fn.second-fn.first):smin();
 	while(nc>=0){
 		int wt=fn.second-fn.first;
 		int ans=max((wt+cost(jobs,dp,nc)),cost(jobs,dp,curr-1));

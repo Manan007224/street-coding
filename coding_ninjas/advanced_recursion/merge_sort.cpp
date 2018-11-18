@@ -1,54 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void print(int input[], int size){
-  for(int i=0;i<size;i++)
-    cout << input[i] << endl;
-}
-
-void sp(int input[], int left, int right){
-  for(int i=left;i<=  right;i++) cout << input[i] << " ";
-  cout << endl;
-}
-
-void merge(int input[], int left, int middle, int right){
-  int tp1 = middle-left+1;
-  int tp2 = right-middle;
+void merge(int ip[], int l, int m, int r){
+  int tp1 = m-l+1;
+  int tp2 = r-m;
   int la[tp1], lr[tp2];
-  for(int i=0;i<tp1;i++)
-    la[i] = input[left+i];
-  for(int j=0;j<tp2;j++)
-    lr[j] = input[middle+1+j];
-  int i=0; int j=0; int k=left;
-  while(i<tp1 && j<tp2){
-    if(la[i]<=lr[j])
-      input[k++] = la[i++];
-    else
-      input[k++] = lr[j++];
+  for(int i=0;i<tp1;i++) la[i]=ip[l+i];
+  for(int j=0;j<tp2;j++) lr[j]=ip[m+1+j];
+  int i=0; int j=0; int k=l;
+  while(i<tp1&&j<tp2){
+    if(la[i]<=lr[j]) ip[k++]=la[i++];
+    else ip[k++]=lr[j++];
   }
-  while(i<tp1)
-    input[k++] = la[i++];
-  while(j<tp2)
-    input[k++] = lr[j++];
+  while(i<tp1) ip[k++]=la[i++];
+  while(j<tp2) ip[k++]=lr[j++];
 }
 
-void msort(int input[], int left, int right){
-  if(left<right){
-    int middle = left+(right-left)/2;
-    msort(input, left, middle);
-    //sp(input, left, right);
-    msort(input, middle+1, right);
-    merge(input, left, middle, right);
+void sort(int ip[], int l, int r){
+  if(l<r){
+    int m = l+(r-l)/2;
+    sort(ip,l,m);
+    sort(ip,m+1,r);
+    merge(ip,l,m,r);
   }
-}
-
-void mergeSort(int input[], int size){
-  msort(input, 0, size-1);
 }
 
 int main(){
-  int input[4] = {4, 1, 3, 2};
-  mergeSort(input, 4);
-  //print(input, 4);
+  int ip[4] = {4, 1, 3, 2};
+  msort(ip,0,4);
   return 0;
 }

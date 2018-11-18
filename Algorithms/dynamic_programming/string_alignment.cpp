@@ -1,11 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 typedef vector<int> lst;
 typedef vector<vector<int>> llst;
 
 int main(){
-	string a,b;
+    string a,b;
+    string a1="";
+    string b1="";	
 	cin>>a>>b;
 	a=" "+a;
 	b=" "+b;

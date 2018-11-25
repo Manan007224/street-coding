@@ -1,36 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef vector<int> lst;
 
-int partition(vector<int> &arr, int low, int high){
-	int pivot = arr[low];
-	int i = low;
-	int j = high;
-	while(i<j){
-		while(arr[i]<=pivot) i++;
-		while(arr[j]>pivot) j--;
-		if(i<j) swap(arr[i],arr[j]);
+int partition(lst &A,int l,int h){
+	int pt=A[l];
+	int x1=l;
+	int x2=h;
+	while(x1<x2){
+		while(A[x1]<=pt) x1++;
+		while(A[x2]>pt) x2--;
+		if(x1<x2) swap(A[x1],A[x2]);
 	}
-	swap(arr[low],arr[j]);
+	swap(A[l],A[x2]);
 	return j;
 }
 
-void quick_sort_helper(vector<int> &arr, int low, int high){
-	if(low<high){
-		int mid = partition(arr,low,high);
-		quick_sort_helper(arr,low,mid-1);
-		quick_sort_helper(arr,mid+1,high);
+void qsort(lst &A,int l,int h){
+	if(l<h){
+		int m=partition(A,l,h);
+		qsort(A,l,m-1);
+		qsort(A,m+1,h);
 	}
 }
 
-void quick_sort(vector<int> &arr){
-	//arr.push_back(numeric_limits<int>::max());
-	quick_sort_helper(arr,0,arr.size()-1);
-	//arr.pop_back();
-}
-
 int main(){
-	vector<int> nums = {10,16,8,12,15,6,3,9,5};
-	quick_sort(nums);
-	for(auto n: nums) cout<<n<<" ";
+	lst vector<int> nums = {10,16,8,12,15,6,3,9,5};
+	qsort(A,0,A.size()-1);
+	for(auto x:nums) cout<<x<<" ";
 	cout<<endl;
 }

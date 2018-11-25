@@ -4,8 +4,7 @@ typedef pair<int,int> pt;
 typedef vector<pair<int,int>> lst_p;
 typedef vector<int> lst;
 typedef numeric_limits<int>::min() smin;
-
-bool sortbydiff(pt &pt1, pt &pt2){return ((pt1.second)<(pt2.second));}
+bool sp(pt &a, pt &b){return ((a.second)<(b.second));}
 
 int cost(lst_p &jobs, lst &dp, int curr){
 	if(curr==-1) return 0;
@@ -34,7 +33,7 @@ int cost(lst_p &jobs, lst &dp, int curr){
 int main(){
 	lst_p jobs={{0,6},{1,4},{3,5},{3,8},{4,7},{5,9},{6,10},{8,11}};
 	lst dp(jobs.size(),-1);
-	sort(jobs.begin(),jobs.end(),sortbydiff);
+	sort(jobs.begin(),jobs.end(),sp);
 	int ans=cost(jobs,dp,jobs.size()-1);
 	cout<<ans<<endl;
 	return 0;

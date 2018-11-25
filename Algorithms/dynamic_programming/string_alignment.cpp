@@ -27,5 +27,10 @@ int main(){
 		}
 		cout<<endl;
 	}
+	//Trying to backtrack
+	int k=M[t1-1][t2-1];
+	while(true){
+		
+	}
 	return 0;
 }

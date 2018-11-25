@@ -7,8 +7,15 @@ int kp(lst &v,lst &w,llst &dp,int i,int j){
 	if(i==0||j==0) return 0;
 	if(w[i]>j) return kp(v,w,dp,i-1,j);
 	if(dp[i][j]!=-1) return dp[i][j];
-	int ans=max(v[i]+kp(v,w,dp,i-1,j-w[i]),kp(v,w,dp,i-1,j));
-	return dp[i][j]=ans;
+	int cc=kp(v,w,dp,i-1,j);
+	int cf=v[i]+kp(v,w,dp,i-1,j-w[i]);
+	if(cc<cf){
+		dp[i][j]=cf;
+		cout<<i<<endl;
+	}
+	else dp[i][j]=cc;
+	//int ans=max(v[i]+kp(v,w,dp,i-1,j-w[i]),kp(v,w,dp,i-1,j));
+	return dp[i][j];
 }
 
 int main(){

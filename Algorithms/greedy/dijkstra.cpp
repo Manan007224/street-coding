@@ -10,7 +10,6 @@ int main(){
 	Graph g(n);
 	lst dist(n,INF);
 	vector<bool> flag(n,false);
-	vector<bool> done(n,false);
 	for(int i=0;i<n;i++){
 		int m; cin>>m;
 		for(int j=0;j<m;j++){

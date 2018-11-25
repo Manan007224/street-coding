@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef numeric_limits<int>::max() smax;
+typedef numeric_limits<int>::min() smin;
 
 class Solution {
 public:
@@ -26,18 +28,18 @@ public:
 
         for(int i=cnt;i>=0;i--){
         	ans = ans + (int(num[i])-48)*(pow(10.0,cnt-i));
-        	if(ans>numeric_limits<int>::max())
-        		return (flag==false) ? numeric_limits<int>::max() : numeric_limits<int>::min();
+        	if(ans>smax)
+        		return (flag==false)?smax:smin;
         }
-        if(ans<=numeric_limits<int>::min())
-        	return (flag==false) ? numeric_limits<int>::max() : numeric_limits<int>::min();
+        if(ans<=smin)
+        	return (flag==false)?smax:smin;
         else
-        	return (flag==false) ? +(ans) : -(ans);
+        	return (flag==false)?+(ans):-(ans);
     }
 };
 
 int main(){
-	string str = "-91283472332";
+	string str = "-123 manan";
 	Solution sln;
 	cout<<sln.myAtoi(str)<<endl;
 	return 0;

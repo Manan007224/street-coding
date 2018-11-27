@@ -4,7 +4,6 @@ using namespace std;
 typedef pair<int,int> pt;
 typedef vector<int> lst;
 typedef vector<pair<int,pair<int,int>>> Graph;
-
 int find(lst &p,int x){return (p[x]==x)?x:find(p,p[x]);}
 void join(lst &p,int x1,int x2){p[find(p,x1)]=find(p,x2);}
 
@@ -18,7 +17,7 @@ int main(){
 	for(int i=0;i<e;i++){
 		int u,v,w;
 		cin>>u>>v>>w;
-		g.push_back(make_pair(w,make_pair(u,v)));
+		g.push_back({w,{u,v}});
 	}
 	sort(g.begin(),g.end());
 	for(auto x:g){

@@ -1,0 +1,7 @@
+# Problem configuration
+
+name: PizzaDeal
+limits:
+   timeout: 1
+
+stop-on-first-failed-test-case: true

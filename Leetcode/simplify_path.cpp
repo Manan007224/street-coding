@@ -19,7 +19,7 @@ public:
     		else if(path[k]=='.'&&(!dot) && !isalpha(path[k+1])) dot=true;
     		else{
     			int pr=k;
-    			while(path[k]!='/'){
+    			while(simplifyPath[k]!='/'){
     				k++;
     				if(path.size()<k) break;
     			}

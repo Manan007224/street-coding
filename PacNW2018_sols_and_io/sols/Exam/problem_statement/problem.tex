@@ -1,0 +1,47 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Exam}
+\problemname{Exam}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.2\textwidth]{Exam.png}
+\end{figure}
+
+
+Your friend and you took a true/false exam of $n$ questions.
+You know your answers, your friend's answers, and that your friend got
+$k$ questions correct.
+
+Compute the maximum number of questions you could have gotten correctly.
+
+\section{Input}
+
+The first line of input contains a single integer $k$.
+
+The second line contains a string of $n$ ($1 \le n \le 1000$) characters, the answers you wrote down. Each letter is either a `{\tt T}' or an `{\tt F}'.
+
+The third line contains a string of $n$ characters, the answers your friend
+wrote down. Each letter is either a `{\tt T}' or an `{\tt F}'.
+
+The input will satisfy $0 \le k \le n$.
+
+\section{Output}
+
+Print, on one line, the maximum number of questions you could have gotten
+correctly.
+
+\sampleio{Exam}
+
+\end{document}

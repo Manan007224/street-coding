@@ -3,17 +3,19 @@ using namespace std;
 
 class Solution {
 public:
-    TreeNode* sortedArrayToBST(vector<int>& nums) {
-        
+
+    TreeNode* recur(vector<int> &nums, int left, int right){
+        if(left<right)
+            return NULL;
+        int mid = (left+right)/2;
+        TreeNode* tp = new TreeNode(nums[mid]);
+        tp->left = recur(nums, left, mid-1);
+        tp->right = recur(nums, mid+1, left);
+        return tp;
     }
 
-    TreeNode* runner(vector<int> &n, int s, int m, int e){
-    	if(s<=e){
-    		int mid=s+(e-s)/2;
-	    	TreeNode* tp=new TreeNode(n[mid]);
-	    	tp->left=runner(n,s,mid-1);
-	    	tp->right=runner(n,mid+1,e);
-    	}	
+    TreeNode* sortedArrayToBST(vector<int>& nums) {
+        return(recur(nums,0,nums.size()-1));
     }
 };
 

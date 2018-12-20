@@ -1,0 +1,5 @@
+score = int(raw_input())
+x,y = raw_input(), raw_input()
+n = len(x)
+same = sum(a==b for a,b in zip(x,y))
+print min(same,score) + min(n-same,n-score)

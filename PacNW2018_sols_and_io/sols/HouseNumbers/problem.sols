@@ -1,0 +1,7 @@
+# Problem configuration
+
+name: HouseNumbers
+limits:
+   timeout: 1
+
+stop-on-first-failed-test-case: true

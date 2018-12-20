@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Pizza Deal}
+\problemname{PizzaDeal}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{PizzaDeal.png}
+\end{figure}
+
+
+There's a pizza store which serves pizza in two sizes:
+either a pizza slice, with area $A_1$ and price $P_1$, or
+a circular pizza, with radius $R_1$ and price $P_2$.
+
+You want to maximize the amount of pizza you get per dollar. Should
+you pick the pizza slice or the whole pizza?
+
+\section{Input}
+
+The first line contains two space-separated integers $A_1$ and $P_1$.
+
+Similarly, the second line contains two space-separated integers $R_1$ and $P_2$.
+
+It is guaranteed that all values are positive integers at most $10^3$.
+We furthermore guarantee that the two will not be worth the same amount
+of pizza per dollar.
+
+\section{Output}
+
+If the better deal is the whole pizza, print `\texttt{Whole pizza}' on a single
+line.
+
+If it is a slice of pizza, print `\texttt{Slice of pizza}' on a single
+line.
+
+\sampleio{PizzaDeal}
+
+\end{document}

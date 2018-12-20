@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 typedef vector<int> lst;
-typedef vector<vector<int>> llst;
+typedef vector<lst> llst;
 
 int main(){
 	lst wife(3,-1);

@@ -43,11 +43,11 @@ public:
         while(l<=r){
             int m=(l+r)/2;
             if(target==nums[m]) return m;
-            if(nums[l]<nums[m]){
+            if(nums[l]<nums[m]){ //left side is sorted
                 if(target>=nums[l] && target<nums[m]) r=m-1;
                 else l=m+1;
             }
-            else{
+            else{ //right side is sorted
                 if(target>nums[m] && target<=nums[r]) l=m+1;
                 else r=m-1;
             }
@@ -57,7 +57,7 @@ public:
 };
 
 int main(){
-	vector<int> v={4,5,6,7,0,1,2};
+	vector<int> v={3,1};
 	Solution sln;
 	int ans=sln.search(v,1);
 	cout<<ans<<endl;

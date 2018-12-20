@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Cops And Robbers}
+\problemname{CopsAndRobbers}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{CopsAndRobbers.png}
+\end{figure}
+
+
+The First Universal Bank of Denview has just been robbed! You want
+to catch the robbers before they leave the state of Calirado.
+
+The state of Calirado is a perfect grid of size $m$-by-$n$.
+The robbers will try to escape by going from grid square to grid square
+(only through edges, not corners) until they reach the border
+of the state.
+
+You can barricade some grid squares to stop the robbers from using them.
+However, depending on the terrain, different grid squares may cost
+different amount of money,
+and some grid squares may not be barricaded at all!
+
+Find the cheapest set of grid squares to barricade that guarantees no escape
+for the robbers.
+
+\section{Input}
+
+The first line of input contains three space-separated integers
+$n$, $m$, and $c$ ($1 \le n, m \le 30$, and $1 \le c \le 26$),
+where $n$ and $m$ are the dimensions of the grid, and $c$ is the
+number of types of terrain in Calirado.
+
+Each of the next $m$ lines contains $n$ letters each, representing the grid.
+\begin{itemize}
+	\item Character `{\tt B}' indicates the First Universal Bank of Denview;
+	it is where the robbers currently are.
+	\item Characters `{\tt a}' through `{\tt z}' represent the different
+	types of terrain. Only the first $c$ alphabets will appear in the grid.
+	\item A dot (`{\tt .}') represents a grid square that cannot be barricaded.
+\end{itemize}
+It is guaranteed that the grid will contain exactly one \texttt{B} character.
+
+Finally, the last line of the input contains $c$ space-separated integers
+between $1$ and $100{,}000$ (inclusive), representing the cost of
+barricading a single grid square of type `{\tt a}', `{\tt b}', and so on.
+
+\section{Output}
+
+Print, on one line, the minimum total cost of barricading plan that
+guarantees no exit for the robbers.
+
+If there is no way to prevent the robbers from escaping,
+print \texttt{-1} instead.
+
+In the first example,
+the minimum cost is to barricade the central three squares on each
+side for a total cost of 12.
+
+In the second example,
+since the bank is on the border, and we cannot barricade the bank,
+there is no way to prevent the robbers from escaping the state.
+
+\sampleio{CopsAndRobbers}
+
+\end{document}

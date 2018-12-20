@@ -3,7 +3,7 @@ using namespace std;
 #define INF 0x3f3f3f3f 
 typedef pair<int,int> pt;
 typedef vector<int> lst;
-typedef vector<pair<int,pt>> Graph;
+typedef vector<pair<int	,pt>> Graph;
 
 int main(){
 	int n,e; cin>>n>>e;
@@ -28,6 +28,8 @@ int main(){
 		}
 		if(!updated) break;
 	}
+	// check for negative cycles
+	
 	for(auto x:dist) cout<<x<<endl;
 	return 0;
 }

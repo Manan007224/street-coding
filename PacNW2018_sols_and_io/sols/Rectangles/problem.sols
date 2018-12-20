@@ -1,0 +1,7 @@
+# Problem configuration
+
+name: Rectangles
+limits:
+   timeout: 1
+
+stop-on-first-failed-test-case: true

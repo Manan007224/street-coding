@@ -1,0 +1,47 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Greedy Scheduler}
+\problemname{GreedyScheduler}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{GreedyScheduler.png}
+\end{figure}
+
+
+A store has $n$ cashiers numbered sequentially from $1$ to $n$,
+with $c$ customers in a queue. A customer at
+the front of the queue is constantly assigned to the first unoccupied
+cashier, \emph{i.e.}, cashier with the smallest number.
+The $i$th customer's shopping cart takes $t_i$ seconds to
+process.
+
+Find which cashier will process each customer's shopping cart.
+
+\section{Input}
+
+The first line of input contains two space-separated integers
+$n$ and $c$ ($1\le n\le c\le 1000$).
+The second line of input contains $c$ space-separated integers
+$t_1, \ldots, t_c$, representing the
+length of time required to handle that customer.
+
+\section{Output}
+
+Output a single line containing $c$ space-separated integers,
+each with the cashier number that handles that customer.
+
+\sampleio{GreedyScheduler}
+
+\end{document}

@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Rectangles}
+\problemname{Rectangles}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{Rectangles.png}
+\end{figure}
+
+
+You are given several axis-aligned rectangles. Compute
+the sum of the area of the regions that are covered by an odd number
+of rectangles.
+
+\section{Input}
+
+The first line of input contains a single integer $n$ ($1 \le n \le 10^5$),
+representing the number of rectangles.
+
+Each of the next $n$ lines contains four space-separated integers
+$x_1$, $y_1$, $x_2$, and $y_2$, each between $0$ and $10^9$,
+describing the coordinates of a rectangle.
+
+\section{Output}
+
+Print, on one line, the total area covered by an odd number of
+rectangles as an exact integer.
+
+\sampleio{Rectangles}
+
+\end{document}

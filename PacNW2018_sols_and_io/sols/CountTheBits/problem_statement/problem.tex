@@ -1,0 +1,38 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Count The Bits}
+\problemname{CountTheBits}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{CountTheBits.png}
+\end{figure}
+
+
+Given an integer k and a number of bits b ($1 \le b \le 128$),
+calculate the total number of 1 bits in the binary representations of
+multiples of k between 0 and $2^b-1$ (inclusive), modulo 1,000,000,009.
+
+\section{Input}
+
+The input will consist of two integers $k$ and $b$ on a single line,
+with $1\le k \le 1000$ and $1 \le b \le 128$.
+
+\section{Output}
+
+Write your result as an integer on a single line.
+
+\sampleio{CountTheBits}
+
+\end{document}

@@ -1,0 +1,81 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Random Index Vectors}
+\problemname{RandomIndexVectors}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{RandomIndexVectors.png}
+\end{figure}
+
+
+A \emph{Random Index Vector} (RIV) is a data structure that can represent
+very large arrays where most elements are zero.
+Here, we consider a version of RIVs which can contain only $-1$, $0$, and
+$+1$ as elements. There are three basic operations on RIVs:
+
+\begin{itemize}
+\item Addition of two RIVs $a$ and $b$;
+the resulting RIV $c$ is defined by $c_i = a_i+b_i$.
+The values are clamped at $\pm 1$, \emph{i.e.}, we define $1+1=1$ and $(-1)+(-1)=-1$.
+
+\item Multiplication of two RIVs $a$ and $b$; the resulting RIV $d$ is defined by $d_i=a_i b_i$.
+
+\item Rotation of an RIV $a$ by some integer $k$; this shifts all of the values
+in $a$ to the left by $k$ indices. The first $k$ values at the start of $a$ go
+to the end of the array and become the rightmost values.
+\end{itemize}
+
+An RIV is written in its \emph{condensed form}. This representation is
+a list that starts with the number of nonzero values, followed by
+a sorted list of indices (1-indexed) that have nonzero values,
+where the indices are negated if the values there are $-1$.
+
+For example, consider an RIV representing an array
+\[
+(1, 0, -1, 0, 0, 0, -1, 0, 0, 1, 0).
+\]
+There are 4 nonzero elements at indices 1, 3, 7 and 10, and the
+values at 3 and 7 are $-1$, so the condensed form of this RIV is
+\[
+(4, 1, -3, -7, 10).
+\]
+
+Given two RIVs in condensed form, add them, multiply them,
+and rotate them both. Output the results in condensed form.
+
+\section{Input}
+
+The first line of input contains two space-separated integers $n$ and $k$ ($1\le k \le n\le 10^{18}$), where $n$ is the full (uncondensed) length of the
+RIVs and $k$ is the number of indices to rotate by.
+
+Each of the next two lines contains a condensed form of an RIV,
+starting with an integer $m$ ($0\le m\le 1{,}000$), followed by $m$ space-separated
+indices $i_1, \ldots, i_m$. Each index $i_j$ is a nonzero integer between $-n$
+and $n$ (inclusive).
+
+\section{Output}
+
+Output four vectors, one per line, in condensed form:
+
+\begin{itemize}
+\item Sum of the two input RIVs.
+\item Product of the two input RIVs.
+\item First RIV rotated by $k$.
+\item Second RIV rotated by $k$.
+\end{itemize}
+
+\sampleio{RandomIndexVectors}
+
+\end{document}

@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Time Limits}
+\problemname{TimeLimits}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{TimeLimits.png}
+\end{figure}
+
+
+A contest setter wants to determine the time limits for a given
+problem. There are $n$ model solutions, and solution $k$ takes $t_k$
+milliseconds to run on the test data. The contest setter
+wants the time limit to be an integer number of seconds, and wants
+the time limit to be at least $s$ times larger than the slowest model
+solution. Compute the minimum time limit the contest setter can
+set.
+
+\section{Input}
+
+The first line of input contains two space-separated integers $n$ and $s$ ($1 \le n \le 100$ and $1 \le s \le 20$).
+
+The second line of input contains $n$ space-separated integers $t_1, \ldots, t_n$ ($1 \le t_k \le 2000$ for all $k=1, \ldots, n$).
+
+\section{Output}
+
+Print, on one line, the minimum time limit (in seconds) as a single integer.
+
+\sampleio{TimeLimits}
+
+\end{document}

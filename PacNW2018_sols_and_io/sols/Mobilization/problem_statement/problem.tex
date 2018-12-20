@@ -1,0 +1,51 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Mobilization}
+\problemname{Mobilization}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{Mobilization.png}
+\end{figure}
+
+
+In some strategy games you are required to mobilize an army.
+There are $n$ troops to choose from, each of which has a unit cost $c_i$,
+health $h_i$, and potency $p_i$.
+You can acquire any combination of the troop types (even fractional units),
+such that the total cost is no more than $C$.
+The \emph{efficacy} of the army is equal to its
+total health value, multiplied by its total potency.  What is the greatest
+efficacy you can achieve given the troops available?
+
+You may assume that there are always sufficient troops to buy as many as
+you want (subject to the total cost constraint).
+
+\section{Input}
+
+The first of input consists of two space-separated integers $n$ and
+$C$ ($1 \le n \le 30{,}000$ and $1 \le C \le 100{,}000$).
+
+Each of the next $n$ lines starts with an integer $c_i$ ($1 \le c_i \le 100{,}000$),
+followed by two decimal values $h_i$ and $p_i$ ($0.0 \le h_i, p_i \le 1.0$).
+The numbers are space-separated.
+
+\section{Output}
+
+Print, on a single line, the greatest possible efficacy, with exactly two digits
+after the decimal point.
+
+\sampleio{Mobilization}
+
+\end{document}

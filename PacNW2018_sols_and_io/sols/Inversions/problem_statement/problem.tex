@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Inversions}
+\problemname{Inversions}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.3\textwidth]{Inversions.png}
+\end{figure}
+
+You are given a sequence $p = (p_1, \ldots, p_n)$ of $n$ integers
+between $1$ and $k$, inclusive.
+Some of the integers are not determined, but they must still be between $1$ and $k$.
+
+An inversion is a pair of indices $(i, j)$ with $i < j$ and $p_i > p_j$.
+
+Find the maximum possible number of inversions in $p$ obtained by
+replacing the undetermined numbers with values between $1$ and $k$.
+Note that the numbers can be duplicated.
+
+\section{Input}
+
+The first line of input contains two space-separated integers $n$ and $k$ ($1 \le n \le 200{,}000$ and $1 \le k \le 100$).
+The next $n$ lines describe the sequence $p$, and each contains a single integer between $0$ and $k$, inclusive. The value $0$ represents an undetermined number.
+
+\section{Output}
+
+Print, on a single line, the maximum possible number of inversions.
+
+\sampleio{Inversions}
+
+\end{document}

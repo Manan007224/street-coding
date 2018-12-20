@@ -1,0 +1,60 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Knockout}
+\problemname{Knockout}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{Knockout.png}
+\end{figure}
+
+
+The solitaire game Knockout is played as follows. The digits from
+1 to 9 are written down on a board, in order.
+In each turn, you throw a pair
+of six-sided dice. You sum the dice and cross out some set of digits
+that sum to the same total. If you cannot, the game ends and your
+score is the concatenation of the remaining digits. Otherwise, you
+throw the dice again and continue.
+
+This game can be played to either minimize or maximize your score.
+Given a position of the game (what digits remain) and a roll of the
+dice, compute which digits you should remove and what your expected
+total score is for both minimizing and maximizing versions of the game.
+
+\section{Input}
+
+The input contains a single line with three space-separated integers.
+The first is the board state, containing some nonempty subset of the
+digits 1 through 9, in order. The next two integers are numbers
+between 1 to 6 (inclusive), representing the roll of the two dice.
+
+\section{Output}
+
+On the first line of output, print the digit(s) you should remove
+to minimize the expected score, followed by the expected score.
+On the second line of output, do the same for the maximizing version
+of Knockout.
+
+If multiple digits are removed, list the digits in order with
+no space separating them. If you cannot remove digits to match the
+sum of the dice, print `{\tt -1}' for your move instead.
+
+The expected scores should be printed with exactly five digits
+after the decimal point.
+
+
+\sampleio{Knockout}
+
+\end{document}

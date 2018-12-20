@@ -1,0 +1,48 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Goat Rope}
+\problemname{GoatRope}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{GoatRope.png}
+\end{figure}
+
+You have a house, which you model as an axis-aligned rectangle
+with corners at $(x_1, y_1)$ and $(x_2, y_2)$.
+
+You also have a goat, which you want to tie to a fence post
+located at $(x, y)$, with a rope of length $l$. The goat can reach
+anywhere within a distance $l$ from the fence post.
+
+Find the largest value of $l$ so that the goat cannot reach your house.
+
+\section{Input}
+
+Input consists of a single line with six space-separated integers
+$x$, $y$, $x_1$, $y_1$, $x_2$, and $y_2$. All the values are guaranteed
+to be between $-1000$ and $1000$ (inclusive).
+
+It is guaranteed that $x_1 < y_1$ and $x_2 < y_2$, and that $(x, y)$
+lies strictly outside the axis-aligned rectangle with corners at
+$(x_1, y_1)$ and $(x_2, y_2)$.
+
+\section{Output}
+
+Print, on one line, the maximum value of $l$, rounded and displayed to
+exactly three decimal places.
+
+\sampleio{GoatRope}
+
+\end{document}

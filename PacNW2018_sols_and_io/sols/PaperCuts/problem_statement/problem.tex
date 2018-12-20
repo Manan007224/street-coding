@@ -1,0 +1,67 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Paper Cuts}
+\problemname{PaperCuts}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{PaperCuts.png}
+\end{figure}
+
+
+Tito has a paper strip with some letters written on it.
+He would like to rearrange the letters to form some other word.
+He does this by making some number of vertical cuts and then
+rearranging the remaining strips of paper. For example, a strip with letters
+
+\begin{verbatim}
+  abbaaddccee
+\end{verbatim}
+
+can be cut into four pieces,
+
+\begin{verbatim}
+  abb | aa | ddcc | ee
+\end{verbatim}
+
+and be put together in a different order:
+
+\begin{verbatim}
+  aaabbeeddcc
+\end{verbatim}
+
+Given Tito's paper strip and the word he wants to form,
+determine the minimum number of cuts that Tito needs to make
+in order to construct the desired word.
+
+\section{Input}
+
+The first line of input contains a single string of lowercase letters,
+representing Tito's paper strip.
+
+The second line of input contains a single string of lowercase letters,
+representing the word Tito wants to form by rearranging the letters.
+
+It is guaranteed that the two lines consist of the same number of letters
+between 1 and 18 (inclusive), and that the letters consisting the two lines
+are exactly the same, \emph{i.e.}, it is always possible to reach Tito's desired
+word by rearranging the letters in the paper strip.
+
+\section{Output}
+
+Print, on a single line, the minimum number of cuts that Tito has to make.
+
+\sampleio{PaperCuts}
+
+\end{document}

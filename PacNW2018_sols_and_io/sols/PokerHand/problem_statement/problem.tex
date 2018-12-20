@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Poker Hand}
+\problemname{PokerHand}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.2\textwidth]{PokerHand.png}
+\end{figure}
+
+
+You're given a five-card hand drawn from a standard 52-card deck.
+Each card has a rank (one of A, 2, 3, \ldots, 9, T, J, Q, K), and
+a suit (one of C, D, H, S).
+
+
+The \emph{strength} of your hand is defined as the maximum value
+$k$ such that there are $k$ cards in your hand that have the same rank.
+
+Find the strength of your hand.
+
+\section{Input}
+
+The input consists of a single line, with five two-character
+strings separated by spaces.
+
+The first character in each string will be the rank of the card,
+and will be one of {\tt A23456789TJQK}. The second character in
+the string will be the suit of the card, and will be one of {\tt CDHS}.
+
+It is guaranteed that all five strings are distinct.
+
+\section{Output}
+
+Output, on a single line, the strength of your hand.
+
+\sampleio{PokerHand}
+
+\end{document}

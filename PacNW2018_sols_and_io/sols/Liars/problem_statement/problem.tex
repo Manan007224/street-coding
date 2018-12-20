@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+
+\ifdefined\testinputfile\endcsname\else\input ../../../pacnw/ReadSamples.tex\fi
+
+\title{Liars}
+\problemname{Liars}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{Liars.png}
+\end{figure}
+
+
+There are $n$ people in a circle, numbered from $1$ to $n$,
+each of whom always tells the truth or always lies.
+
+Each person $i$ makes a claim of the form: ``the number of
+truth-tellers in this circle is between $a_i$ and $b_i$, inclusive.''
+
+Compute the maximum number of people who could be telling the truth.
+
+\section{Input}
+
+The first line contains a single integer $n$ ($1 \le n \le 10^3$).
+Each of the next $n$ lines contains two space-separated integers $a_i$ and $b_i$
+($0 \le a_i \le b_i \le n$).
+
+\section{Output}
+
+Print, on a single line, the maximum number of people who
+could be telling the truth. If the given set of statements is inconsistent,
+print \texttt{-1} instead.
+
+\sampleio{Liars}
+
+\end{document}

@@ -1,19 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 typedef vector<vector<int>> llst;
 typedef vector<vector<bool>> llst_b;
 typedef vector<int> lst;
 typedef vector<bool> lst_b;
 typedef pair<int,int> pt;
-
 lst r={-1,-1,-2,-2,1,1,2,2};
 lst c={-2,2,-1,1,-2,2,-1,1};
 
 void print(llst tp){
 	for(int i=0;i<8;i++){
-		for(int j=0;j<8;j++)
-			cout<<tp[i][j]<<" ";
+		for(int j=0;j<8;j++) cout<<tp[i][j]<<" ";
 		cout<<endl;
 	}
 }

@@ -58,8 +58,8 @@ public:
     			q.push({now->left,lc});
     		}
     		if(rc<v.size() && v[rc]!="null"){
-    			now->right = new TreeNode(stoi(v[lc]));
-    			q.push({now->right,lc});
+    			now->right = new TreeNode(stoi(v[rc]));
+    			q.push({now->right,rc});
     		}
     	}
     	return ans; 

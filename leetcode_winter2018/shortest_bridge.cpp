@@ -54,7 +54,7 @@ int main(){
 	vvi test = {{1,1,0},{0,1,0},{0,0,1}};
 	vvi test1 = {{1,1,1,1,1},{1,0,0,0,1},{1,0,1,0,1},{1,0,0,0,1},{1,1,1,1,1}};
 	Solution sln;
-	int a = sln.shortestBridge(test1);
+	int a = sln.shortestBridge(test);
 	cout<<a<<endl;
 	return 0;
 }

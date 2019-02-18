@@ -3,9 +3,7 @@ using namespace std;
 typedef pair<int,int> pt;
 typedef vector<pt> lst_p;
 bool icomapre(pt& a, pt&b){return a.first < b.first;}
-struct compare{
-    bool operator()(pt& a, pt& b){return a.second > b.second;}
-};
+struct compare{ bool operator()(pt& a, pt& b){return a.second > b.second;}};
 
 int solution(vector<int> &S, vector<int> &E) {
     lst_p people;

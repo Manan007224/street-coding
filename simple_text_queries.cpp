@@ -3,7 +3,7 @@ using namespace std;
 #define INF 0x3f3f3f3f
 typedef vector<string> vs;	
 typedef vector<unordered_map<string,int>> VMP;
-
+	
 vs split(string input){
 	vs v;  stringstream ts(input); string tk;
 	while(getline(ts,tk,' ')) v.push_back(tk);

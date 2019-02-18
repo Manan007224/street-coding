@@ -17,8 +17,7 @@ int main(){
 	int T; cin>>T;
 	vector<string> input;
 	while((T--)>0){
-		string str; 
-		cin>>str;
+		string str; cin>>str;
 		input.push_back(str);
 	}
 	vector<int> ans = mystery(input);

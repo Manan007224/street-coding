@@ -1,45 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef vector<string> vs;
+typedef stringstream ss;
 
 class Solution {
 public:
-    string simplifyPath(string path) {
-    	bool dot=false;
-    	stack<string> st;
-    	int k=-1;
-    	while(++k<path.size()){
-    		if(path[k]=='/'){
-    			dot=false;
-    			continue;
-    		}
-    		if(path[k]=='.'&&(dot) && !isalpha(path[k+1])){
-    			if(!st.empty()) st.pop();
-    			dot=true;
-    		}
-    		else if(path[k]=='.'&&(!dot) && !isalpha(path[k+1])) dot=true;
-    		else{
-    			int pr=k;
-    			while(simplifyPath[k]!='/'){
-    				k++;
-    				if(path.size()<k) break;
-    			}
-				st.push(path.substr(pr,k-pr));
-    		}
-    	}
-    	string ans="";
-    	while(!st.empty()){
-    		ans="/"+st.top()+ans;
-    		st.pop();
-    	}
-    	return (ans=="")?"/":ans;
-    }
+	string simplifypath(string path){
+		if(path == "") return "/";
+		ss input(path);
+		vs files;
+		string f, res;
+		stack<string> st;
+		while(getline(input, f, '/')) {
+			if(f=="." || f=="") continue;
+			if(f=="..") {
+				if(!st.empty()) st.pop();
+			}
+			else st.push(f);
+		}
+		while(!st.empty()) {
+			res = "/" + st.top() + res;
+			st.pop();
+		}
+		return res == "" ? "/" : res;
+	}
 };
 
 int main(){
-	string str="/home/foo/.bashrc";
-	int k=1;
 	Solution sln;
-	string ans=sln.simplifyPath(str);
-	cout<<ans<<endl;
+	cout<<sln.simplifypath("/a//b////.crc/d//././/..")<<endl;
 	return 0;
 }

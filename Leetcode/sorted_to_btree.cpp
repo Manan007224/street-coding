@@ -10,7 +10,7 @@ public:
         int mid = (left+right)/2;
         TreeNode* tp = new TreeNode(nums[mid]);
         tp->left = recur(nums, left, mid-1);
-        tp->right = recur(nums, mid+1, left);
+        tp->right = recur(nums, mid+1, right);
         return tp;
     }
 

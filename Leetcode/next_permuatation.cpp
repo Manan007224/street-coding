@@ -33,8 +33,8 @@ int main() {
 	vi T2 = {1,5,8,4,7,6,5,3,1};
 	Solution sln;
 	//reverse(T.begin()+1, T.begin()+2);
-	sln.nextPermutation(T1);
-	for(auto t: T1) cout<<t<<" ";
+	sln.nextPermutation(T2);
+	for(auto t: T2) cout<<t<<" ";
 	cout<<endl;
 	return 0;
 }

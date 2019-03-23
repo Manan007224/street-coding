@@ -1,57 +1,55 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef vector<int,node*> vin;
 
 struct node{
-	unordered_map<char,node*> children;
-	bool is_end;
+	node* ch[26];
+	bool end;
+  node(){
+    for(int i=0;i<26;i++) ch[i]=NULL;
+    end = 0;
+    }
 };
 
 class Trie {
 private:
-    node* root;
+  node* root;
 public:
-    Trie() {
-        root = new node();
-        root->is_end=false;
+  Trie() {
+    root = new node();
+  }
+  void insert(string word) {
+    node *curr = root;
+    for(auto w:word) {
+      if(curr->ch[w]==NULL) {
+        node* next = new node();
+        curr->ch[w]=next;
+      }
+      curr=curr->ch[w];
     }
-
-    void insert(string word) {
-        if(word.length()==0) return;
-        node* curr=root;
-        for(char& w:word){
-            auto it=curr->children.find(w);
-            if(it==curr->children.end()){
-                node* next=new node();
-                next->is_end=false;
-                curr->children.insert({w,next});
-            }
-            curr=curr->children[w];
-        }
-        curr->is_end=true;
+    curr->end=1;
+  }
+  void search(word) {
+    if(word.length()==0) return 0;
+    node* curr = root;
+    for(auto w:word) {
+      if(curr->ch[w]!=NULL) curr=curr->ch[w];
+      else return 0;
     }
-
-    bool search(string word) {
-       if(word.length()==0) return false; 
-       node* curr=root;
-       for(char& w:word){
-            auto it=curr->children.find(w);
-            if(it==curr->children.end()) return false;
-            node* src=curr->children[w];
-            curr=src;
-       }
-       return curr->is_end;
+    return curr->end;
+  }
+  void prefix_search(word){
+    if(word.length()==0) return 0;
+    node* curr = root;
+    for(auto w:word) {
+      if(curr->ch[w]!=NULL) curr=curr->ch[w];
+      else return 0;
     }
+    return 1;
+  }
+  void regex_search(word){
     
-    bool startsWith(string prefix) {
-        if(prefix.length()==0) return 0;
-        node* curr=root;
-        for(char& p: prefix){
-            auto it=curr->children.find(p);
-            if(it==curr->children.end()) return false;
-            curr=curr->children[p];
-        }
-        return true;
-    }    
+  }
 };
 
 int main(){

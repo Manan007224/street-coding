@@ -1,40 +1,35 @@
+<<<<<<< HEAD
 #include <vector>
 #include <iostream>
 #include <algorithm>
 #include <utility>
 #include "math.h"
 using namespace std;
+
 typedef vector<int> vi;
-typedef pair<int,vi> pvi;
 typedef long long ll;
 
 class Solution {
 public:
     int reversePairs(vector<int>& nums) {
-    	if(nums.size() ==0 || nums.size() == 1) return 0;
       auto ans = merge_sort(nums);
       return ans.first;	
     }
 
-   	pvi merge_sort(vi arr) {
-   		if(arr.size()<=1) return {0,arr};
-   		int m = floor(arr.size()/2);
-   		vi left(arr.begin(), arr.begin()+m), right(arr.begin()+m, arr.end());
-   		auto x1 = merge_sort(left);
-   		auto x2 = merge_sort(right);
-   		vi lt = x1.second, rt = x2.second, res;
-   		int i=0, j=0, ivn=x1.first+x2.first, lp=0, rp=0;
-    	while(lp<lt.size() && rp<rt.size()) {
-    		ll c1 = lt[lp], c2 = rt[rp];
-    		if(c1 > 2*c2) ivn += (lt.size()-lp), rp++;
-    		else lp++;
-    	}
-    	while(i<lt.size() && j<rt.size()) {
-    		lt[i]<=rt[j] ? res.push_back(lt[i++]) : res.push_back(rt[j++]);
-    	}
-    	while(i<lt.size()) res.push_back(lt[i++]);
-    	while(j<rt.size()) res.push_back(rt[j++]);
-   		return {ivn, res}; 
+   	int merge_sort(vi &N, int s, int e) {
+   		if(e-s<=1) return 0;
+      int m = (e-s)/2 + s;
+      int a = merge_sort(N, s, m) + merge_sort(N, m, e);
+      int i=s, j=m, ivn=0;
+      while(i<m && j<e) {
+        ll c1 = N[i], c2 = N[j];
+        if(c1 > 2*c2){
+          ivn += (m-i), j++;
+        }
+        else i++;
+      }
+      inplace_merge(N.begin()+s, N.begin()+m, N.begin()+e);
+      return (a+ivn);
    	}
 };
 
@@ -48,9 +43,3 @@ int main() {
 	cout << x << endl;
 	return 0;
 }
-
-
-
-
-
-

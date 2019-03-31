@@ -24,7 +24,7 @@ public:
   	for(int i=0; i<ss.size(); i++) src.insert(ss[i]), q.push({ss[i],0});
   	for(int i=0; i<tt.size(); i++) dest.insert(tt[i]);
   	while(q.empty()) {
-  		auto x = q.front();
+  		auto x = q.top();
   		q.pop();
   		int node = x.first, dist = x.second;
   		if(dest.find(node)!=dest.end()) return dist+1;

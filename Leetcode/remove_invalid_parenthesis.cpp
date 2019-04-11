@@ -59,6 +59,7 @@ public:
 
 int main() {
 	Solution sln;
+	vector<vector<int>> dp(10,vector<int>(10,0));
 	vector<string> test = {"()())()", "(a)())()", ")(", "(", ""};
 	for(auto t: test) {
 		vector<string> curr = sln.removeInvalidParentheses(t);

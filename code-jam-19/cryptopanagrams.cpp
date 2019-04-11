@@ -5,7 +5,7 @@ typedef vector<ll> vi;
 
 int main() {
 	ll T; cin>>T;
-	for(ll t=1; t<=T; t++) {
+	for(ll t=0; t<T; t++) {
 		ll n,l; cin>>n>>l;
 		vi p(l);
 		vi png;

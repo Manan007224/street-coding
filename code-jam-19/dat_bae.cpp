@@ -1,60 +1,57 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-typedef vector<int> vi;
-typedef vector<vi> vii;
-typedef pair<int,int> pii;
-typedef long long i64;
-#define pb push_back
-#define fi first
-#define se second
-
-int n = 8, b = 5;
-
-string construct(int k) {
-  string res;
-  for(int i = 0; i < n; i++) {
-    res += ((i >> k) & 1) ? '1' : '0';
-  }
-  return res;
-}
-
-
-void find_broken(int pdi, int rid, int numWorking, vector<string> responses, vector<int>& res) {
-  set<int> found;
-  for(int i = 0; i < numWorking; i++) {
-    int value = 0;
-    for(int j = 0; j < 4; j++) {
-      value = (value << 1) | (responses[j + 1][rid + i] == '1');
-    }
-    found.insert(value);
-  }
-
-  int partSize = min(n, (pdi + 1) * 16) - (pdi * 16);
-//  cerr << "partSize " << partSize << endl;
-  for(int i = 0; i < partSize; i++) {
-    if(!found.count(i)) {
-      res.push_back(pdi * 16 + i);
-    }
-  }
-}
-
 
 int main() {
-	vector<string> req = {"00001111", "00110011", "01010101"};
-	vector<string> responses = {"00111", "01001", "00011"};
-	vector<int> values = {5,0};
-	
-	int rid = 0, pdi = 0;
-	vector<int> res;
-	for(int i=1; i<=n-b; i++) {
-		if(i == n + b || responses[0][i] != responses[0][i - 1]) {
-			cout << "came" << " " << i << endl;
-      find_broken(pdi, rid, i - rid, responses, res);
-      rid = i;
-      pdi++;
+  int T; cin >> T;
+
+  string S[5];
+  for (int i = 0; i < 1024; i++) {
+    for (int z = 0; z < 5; z++) {
+      S[z] += char('0' + ((i >> z) & 1));
     }
-	}
+  }
 
+  for (int case_num = 1; case_num <= T; case_num ++) {
+    int N, B, F; cin >> N >> B >> F;
+    assert(B <= 15);
 
-	return 0;
+    string Q[5];
+    for (int q = 0; q < 5; q++) {
+      cout << S[q].substr(0, N) << endl << flush;
+      cin >> Q[q];
+      if (Q[q] == "-1") exit(0);
+      assert(int(Q[q].size()) == N - B);
+      Q[q] += S[q].substr(N);
+      assert(int(Q[q].size()) == 1024 - B);
+    }
+
+    vector<int> bads;
+    int nxt = 0;
+    for (int i = 0; i < 1024 - B; i++) {
+      int v = 0;
+      for (int q = 0; q < 5; q++) {
+        v |= int(Q[q][i] - '0') << q;
+      }
+      while ((nxt & 31) != v) {
+        bads.push_back(nxt);
+        nxt++;
+      }
+      nxt++;
+    }
+
+    while (nxt != 1024) {
+      bads.push_back(nxt);
+      nxt++;
+    }
+
+    assert(int(bads.size()) == B);
+    for (int i = 0; i < B; i++) {
+      cout << bads[i] << " \n"[i+1==B];
+    }
+    cout << flush;
+    int verdict; cin >> verdict;
+    if (verdict != 1) exit(0);
+  }
+
+  return 0;
 }

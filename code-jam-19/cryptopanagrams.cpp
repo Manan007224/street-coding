@@ -1,32 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-typedef vector<ll> vi;
+typedef vector<int> vi;
+typedef vector<vi> vii;
+typedef pair<int,int> pii;
+typedef long long i64;
+#define pb push_back
+#define fi first
+#define se second
 
 int main() {
-	ll T; cin>>T;
-	for(ll t=0; t<T; t++) {
-		ll n,l; cin>>n>>l;
-		vi p(l);
-		vi png;
-		for(ll i=0;i<l;i++) cin>>p[i];
-		unordered_map<ll,char> mp;
-		ll x;
-		for(ll i=0;i<l-1;i++) {
-			x = __gcd(p[i],p[i+1]);
-			if(i==0) png.push_back(p[0]/x);
-			png.push_back(x);
-			if(i==l-2) png.push_back(p[i+1]/x);
+	int T; cin >> T;
+	for(int t=1; t<=T; t++) {
+		i64 N, L;
+		cin >> N >> L;
+		vector<i64> prods(L), primes;
+		for(int i=0; i<L; i++)
+			cin >> prods[i];
+		int p = 0;
+		while(prods[p] != prods[p+1]) p++;
+		i64 curr = __gcd(prods[p], prods[p+1]);
+		primes.pb(prods[p]/curr), primes.pb(curr);
+		i64 last = curr/prods[p+1];
+		for(int i=p; i<L; i++) {
+			last = __gcd(prods[i], prods[i+1]);
+			primes.pb(last);
 		}
-		unordered_set<ll> plist(png.begin(),png.end());
-		vi og(plist.begin(),plist.end());
-		sort(og.begin(),og.end());
-		for(ll i=0; i<og.size(); i++) {
-			mp[og[i]] = ('A'+i);
-		}
-		string ans = "";
-		for(ll i=0; i<png.size(); i++) ans += mp[png[i]];
+		primes.pb(prods[L-1]/last);
+		unordered_set<int> temp(primes.begin(), primes.end());
+		vector<int> prime_vec(temp.begin(), temp.end());
+		sort(prime_vec.begin(), prime_vec.end());
+		unordered_map<i64, char> mp;
+		for(i64 i=0; i<26; i++) 
+			mp[prime_vec[i]] = 'A'+i;
+		string ans = " ";
+		for(i64 i=0; i<primes.size(); i++)
+			ans += mp[primes[i]];
 		cout<<"Case #"<<t<<": "<<ans<<endl;
 	}
-	return 0;
 }

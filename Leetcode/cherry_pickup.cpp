@@ -17,7 +17,7 @@ public:
   	int first_pass = gof(grid, dp, 0, 0);
   	if(first_pass == -1) return 0;
   	backtrack(grid, dp, 0, 0);
-  	int second_pass = gos(grid, dp, grid.size()-1, grid[0].size()-1);
+  	int second_pass = gos(grid, dp1, grid.size()-1, grid[0].size()-1);
   	return first_pass+second_pass;
   }
 

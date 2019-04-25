@@ -27,8 +27,15 @@ int main() {
 	for(int i=1; i<=sum; i++) {
 		for(int j=1; j<=n; j++) {
 			dp[i][j] = dp[i][j-1];
-			count[i][j] = count[i][j];
+			count[i][j] = count[i][j-1];
+			if(i>=arr[j-1]) {
+				dp[i][j] |= dp[i-arr[j-1]][j-1];
+				if(subset[i][j]) {
+					count[i][j] = max(count[i][j], count[i-arr[j-1]][j-1]);
+				}
+			}
 		}
 	}
+	cout << "Max Subset is : " << count[sum][n] << endl;
 	return 0;
 }

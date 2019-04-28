@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef tuple<int,int,int> tpl;
 
 // Path compression and rank based union find
 

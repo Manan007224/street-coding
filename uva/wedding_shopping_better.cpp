@@ -42,7 +42,7 @@ int main() {
 				break;
 			}
 		}
-		if(res > -1) cout << res << endl;
+		if(res > -1) cout << (m - res) << endl;
 		else cout << "no solution" << endl;
 	}
 	return 0;

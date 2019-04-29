@@ -66,8 +66,7 @@ struct Treap {
   }
 
   void insert (int val) {
-    if (contains(val))
-      return;
+    if (contains(val)) return;
     auto nodes = split(root, val);
     root = join(nodes.first, join(new Node(val), nodes.second));
   }

@@ -64,7 +64,7 @@ public:
 		while(!pq.empty()) {
 			node curr = pq.top();
 			pq.pop();
-			cout << curr.cost << " " << curr.src << " " << curr.k << endl;
+			// cout << curr.cost << " " << curr.src << " " << curr.k << endl;
 			if(curr.src == dst)
 				return curr.cost;
 			if(curr.k>=0) {
@@ -73,6 +73,7 @@ public:
 				}
 			}
 		}
+		return -1;
 	}
 };
 

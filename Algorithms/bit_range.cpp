@@ -8,10 +8,10 @@ typedef long long i64;
 #define fi first
 #define se second
 
-struct BIT_Range {
+struct BIT {
   int N;
   vector<int> val1, val2;
-  BIT_Range (int N): N(N), val1(N), val2(N) {}
+  BIT (int N): N(N), val1(N), val2(N) {}
 
   void update (vector<int> &val, int idx, int v) {
     for (int x = idx; x < N; x += (x & -x))
@@ -40,3 +40,7 @@ struct BIT_Range {
     return query(x2) - query(x1 - 1);
   }
 };
+
+int main() {
+  return 0;
+}

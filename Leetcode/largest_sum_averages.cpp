@@ -14,30 +14,21 @@ class Solution {
 public:
   double largestSumOfAverages(vector<int>& A, int K) {
   	int n = A.size();
-    vii_32 dp(n, vi_32(K, -1));
-    double sum = 0;
-    for(int i=0; i<n; i++) {
-    	sum += A[i];
-    	dp[i][0] = sum/(i+1);
+    vii_32 dp(n+1, vi_32(K+1, 0.0));
+    vector<int> prefix(n+1, 0);
+    for(int i=0; i<n; i++) prefix[i+1] = prefix[i]+A[i];
+    for(int i=1; i<=n; i++) dp[i][1] = prefix[i]/i;
+    if(K<=1) return dp[n][1];
+    if(K>=n) return prefix[n]; 
+    for(int k=2; k<=K; k++) {
+    	for(int i=k; i<=n; i++) {
+    		for(int j=i-1; j>=k-1; j--) {
+    			double next_average = (prefix[i]-prefix[j])/(i-j);
+    			dp[i][k] = max(dp[i][k], dp[j][k-1] + next_average);
+    		}
+    	}
     }
-    int res = go(A, 0, K-1, dp);
-    return res;    
-  }
-
-  double go(vector<int> &arr, int start, int K, vii_32 dp) {
-  	int n = arr.size()-1;
-  	if(n-start < K)
-  		return 0;
-  	if(dp[start][K] != -1)
-  		return dp[start][K];
-  	double sum = 0;
-  	double x = INT_MIN;
-  	for(int i=start; i<=n; i++) {
-  		sum += arr[i];
-  		double next_average = go(arr, i+1, K-1, dp);
-  		x = max(x, next_average + sum/(i+1));
-  	}
-  	return dp[start][K] = x;
+   return dp[n][K];   
   }
 };
 

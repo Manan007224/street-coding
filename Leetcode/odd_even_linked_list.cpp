@@ -10,28 +10,26 @@ struct ListNode {
 
 class Solution {
 public:
-    ListNode* oddEvenList(ListNode* head) {
-    	if(head == NULL) return NULL;
-        ListNode* odd = new ListNode(0);
-        ListNode* even = new ListNode(0);
-        ListNode *r_odd {odd} , r_even {even};
-        int x {0};
-      	while(head!=NULL) {
-      		if(x%2 != 0){
-      			even->next = head;
-      			even = even->next;
-      		}
-      		else {
-      			odd->next = head;
-      			odd = odd->next;
-      		}
-      		head = head->next;
-      		x++;
-      	}
-      	even->next = NULL;
-      	odd->next = r_even->next;
-      	return r_odd->next; 
+  ListNode* oddEvenList(ListNode* head) {
+    ListNode *r_even, *r_odd;
+    ListNode *odd = new ListNode(0), even = new ListNode(0);
+    int i = 0;
+    while(head) {
+      if(i%2==0) {
+        even->next = head;
+        even = even->next;
+      }
+      else {
+        odd->next = head;
+        odd = odd->next;
+      }
     }
+    head = head->next;
+    i++;  
+  }
+  even->next = NULL;
+  odd->next = r_even->next;
+  return r_odd->next;
 };
 
 int main() {

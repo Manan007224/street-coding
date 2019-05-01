@@ -30,7 +30,7 @@ public:
 		if(curr_sum == 0)
 			return go(arr, v, 0, target, target, k-1);
 		for(int i=start; i<arr.size(); i++) {
-			if(!v[i] || curr_sum - arr[i] < 0) {
+			if(!v[i]) {
 				v[i] = 1;
 				bool works = go(arr, v, start+1, curr_sum-arr[i], target, k);
 				if(works) return 1;

@@ -1,5 +1,3 @@
-https://leetcode.com/problems/shopping-offers/
-https://leetcode.com/problems/course-schedule/
 https://leetcode.com/problems/race-car/
 https://leetcode.com/problems/decode-string/
 https://leetcode.com/problems/perfect-squares/

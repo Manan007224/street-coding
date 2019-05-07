@@ -45,7 +45,7 @@ int main() {
 	string c = "2[abc]3[cd]ef";
 	string d = "10[a]";
 	Solution sln;
-	cout << sln.decodeString(b) << endl;
-	cout << sln.decodeString(d) << endl;
+	cout << sln.decodeString(a) << endl;
+	// cout << sln.decodeString(d) << endl;
 	return 0;
 }

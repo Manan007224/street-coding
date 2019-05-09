@@ -19,9 +19,7 @@ https://leetcode.com/problems/maximum-frequency-stack/
 
 dp-stuff
 https://leetcode.com/problems/longest-palindromic-subsequence/
-https://leetcode.com/problems/2-keys-keyboard/
-https://leetcode.com/problems/is-subsequence/
-https://leetcode.com/problems/predict-the-winner/
+https://leetcode.com/problems/can-i-win/
 https://leetcode.com/problems/count-numbers-with-unique-digits/
 https://leetcode.com/problems/video-stitching/
 https://leetcode.com/problems/integer-break/

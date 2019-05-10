@@ -18,9 +18,6 @@ https://leetcode.com/problems/maximum-frequency-stack/
 
 
 dp-stuff
-https://leetcode.com/problems/longest-palindromic-subsequence/
 https://leetcode.com/problems/can-i-win/
-https://leetcode.com/problems/count-numbers-with-unique-digits/
-https://leetcode.com/problems/video-stitching/
-https://leetcode.com/problems/integer-break/
-https://leetcode.com/problems/maximum-length-of-pair-chain/
+https://leetcode.com/problems/count-the-repetitions/
+https://leetcode.com/problems/minimum-cost-for-tickets/

@@ -32,14 +32,18 @@ public:
   }
 
   void dfs(int i, int j, vii &vis, vii &A) {
+  	int m = A.size(), n = A[0].size();
   	vis[i][j]=1;
   	for(int k=0; k<4; k++) {
-  		int x = dx[k]+i, y = dy[k]+i;
-  		if(!(x<0 || y<0 || x>=A.size() || y>=A[0].size()) && A[i][j]==1 && !vis[x][y]) dfs(x,y,vis,A);
+  		int x = dx[k]+i, y = dy[k]+j;
+  		if(x>=0 && y>=0 && x<m && y<n && A[i][j]==1 && !vis[x][y]) dfs(x,y,vis,A);
   	}
   }
 };
 
 int main() {
+	vii arr = {{0,0,0,0},{1,0,1,0},{0,1,1,0},{0,0,0,0}};
+	Solution sln;
+	cout << sln.numEnclaves(arr) << endl;
 	return 0;
 }

@@ -13,7 +13,8 @@ typedef long long i64;
 class Solution {
 public:
   bool canIWin(int maxChoosableInteger, int desiredTotal) {
-    if(((maxChoosableInteger+1)*maxChoosableInteger)/2 < desiredTotal) return false;
+    if(((maxChoosableInteger+1)*maxChoosableInteger)/2 < desiredTotal) return 0;
+    if(desiredTotal <= 0) return 1;
     unordered_map<int,int> lookup;
     vector<bool> visited(maxChoosableInteger+1, 0);
     return go(lookup, visited, desiredTotal);
@@ -33,7 +34,7 @@ public:
   		visited[i] = 1;
   		if(!go(lookup, visited, left-i)) {
   			lookup[mask] = 1;
-  			// visited[i]=0;
+  			visited[i]=0;
   			return 1;
   		}
   		visited[i]=0;

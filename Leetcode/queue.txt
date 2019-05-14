@@ -1,17 +1,11 @@
-https://leetcode.com/problems/race-car/
 https://leetcode.com/problems/subarrays-with-k-different-integers/
-https://leetcode.com/problems/binary-search-tree-iterator/
-https://leetcode.com/problems/brick-wall/
 https://leetcode.com/problems/kth-largest-element-in-an-array/
 https://leetcode.com/problems/sort-characters-by-frequency/
 https://leetcode.com/problems/k-closest-points-to-origin/
 https://leetcode.com/problems/create-maximum-number/
-https://leetcode.com/problems/count-the-repetitions/
 https://leetcode.com/problems/count-numbers-with-unique-digits/
 https://leetcode.com/problems/lru-cache/
 https://leetcode.com/problems/max-chunks-to-make-sorted/
-https://leetcode.com/problems/maximum-length-of-repeated-subarray/
-https://leetcode.com/problems/maximum-width-ramp/
 https://leetcode.com/problems/maximum-frequency-stack/
 https://leetcode.com/problems/card-flipping-game/
 https://leetcode.com/problems/elimination-game/
@@ -22,7 +16,6 @@ https://leetcode.com/problems/check-completeness-of-a-binary-tree/
 https://leetcode.com/problems/valid-tic-tac-toe-state/
 https://leetcode.com/problems/knight-probability-in-chessboard/
 https://leetcode.com/problems/median-of-two-sorted-arrays/
-https://leetcode.com/problems/super-egg-drop/
 https://leetcode.com/problems/count-complete-tree-nodes/
 https://leetcode.com/problems/random-point-in-non-overlapping-rectangles/
 https://leetcode.com/problems/find-k-closest-elements/
@@ -57,10 +50,18 @@ https://leetcode.com/problems/time-based-key-value-store/
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/
 https://leetcode.com/problems/different-ways-to-add-parentheses/
 https://leetcode.com/problems/find-the-duplicate-number/
-https://leetcode.com/problems/frog-jump/
 https://leetcode.com/problems/beautiful-arrangement-ii/
 https://leetcode.com/problems/peeking-iterator/
+https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+https://leetcode.com/problems/longest-duplicate-substring/
+https://leetcode.com/problems/repeated-dna-sequences/
+https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/
+https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+https://leetcode.com/problems/score-of-parentheses/
 
 dp-stuff
-https://leetcode.com/problems/jump-game/
 https://leetcode.com/problems/count-the-repetitions/
+https://leetcode.com/problems/remove-boxes/
+https://leetcode.com/problems/student-attendance-record-ii/
+https://leetcode.com/problems/valid-permutations-for-di-sequence/
+https://leetcode.com/problems/race-car/

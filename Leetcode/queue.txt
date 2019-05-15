@@ -7,13 +7,10 @@ https://leetcode.com/problems/count-numbers-with-unique-digits/
 https://leetcode.com/problems/lru-cache/
 https://leetcode.com/problems/max-chunks-to-make-sorted/
 https://leetcode.com/problems/maximum-frequency-stack/
-https://leetcode.com/problems/card-flipping-game/
 https://leetcode.com/problems/elimination-game/
 https://leetcode.com/problems/flip-string-to-monotone-increasing/
-https://leetcode.com/problems/flip-equivalent-binary-trees/
 https://leetcode.com/problems/strong-password-checker/
 https://leetcode.com/problems/check-completeness-of-a-binary-tree/
-https://leetcode.com/problems/valid-tic-tac-toe-state/
 https://leetcode.com/problems/knight-probability-in-chessboard/
 https://leetcode.com/problems/median-of-two-sorted-arrays/
 https://leetcode.com/problems/count-complete-tree-nodes/

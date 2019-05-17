@@ -62,3 +62,12 @@ https://leetcode.com/problems/remove-boxes/
 https://leetcode.com/problems/student-attendance-record-ii/
 https://leetcode.com/problems/valid-permutations-for-di-sequence/
 https://leetcode.com/problems/race-car/
+
+lol
+https://leetcode.com/problems/satisfiability-of-equality-equations/
+https://leetcode.com/problems/redundant-connection/
+https://leetcode.com/problems/count-different-palindromic-subsequences/
+https://leetcode.com/problems/bulb-switcher/
+https://leetcode.com/problems/mirror-reflection/
+https://leetcode.com/problems/orderly-queue/solution/
+https://leetcode.com/problems/minimize-malware-spread-ii/

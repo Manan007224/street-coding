@@ -71,3 +71,11 @@ https://leetcode.com/problems/bulb-switcher/
 https://leetcode.com/problems/mirror-reflection/
 https://leetcode.com/problems/orderly-queue/solution/
 https://leetcode.com/problems/minimize-malware-spread-ii/
+
+tomorrow
+https://leetcode.com/problems/lfu-cache/
+https://leetcode.com/contest/weekly-contest-135/problems/binary-search-tree-to-greater-sum-tree/
+https://leetcode.com/contest/weekly-contest-135/problems/minimum-score-triangulation-of-polygon/
+https://leetcode.com/contest/weekly-contest-135/problems/moving-stones-until-consecutive-ii/
+https://leetcode.com/contest/weekly-contest-134/problems/coloring-a-border/
+https://leetcode.com/contest/weekly-contest-134/problems/uncrossed-lines/

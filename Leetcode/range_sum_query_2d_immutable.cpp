@@ -10,9 +10,9 @@ typedef long long i64;
 #define fi first
 #define se second
 
-class NumMatrix {
+class NumMatrixSlow {
 public:
-  NumMatrix(vector<vector<int>>& matrix) {
+  NumMatrixSlow(vector<vector<int>>& matrix) {
   	int m = matrix.size();
     if(m!=0) {
       int n = matrix[0].size();

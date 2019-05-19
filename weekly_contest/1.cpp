@@ -18,12 +18,9 @@ public:
     while(pq.size() > 1) {
       int a = pq.top(); pq.pop();
       int b = pq.top(); pq.pop();
-      // cout << a << " " << b << endl;
-      int diff = abs(a-b);
-      if(diff!=0) pq.push(diff);
+      if(abs(a-b)) pq.push(abs(a-b));
     }
-    if(!pq.size()) return 0;
-    else return pq.top();
+    return !pq.size() 0 : pq.top();
   }
 };
 

@@ -4,7 +4,6 @@ using namespace std;
 class Solution {
 public:
   string removeDuplicates(string S) {
-    int i = 0, j = 0;
     if(S.length()==0) return "";
     string res = "";
     res += S[0];

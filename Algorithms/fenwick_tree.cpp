@@ -9,7 +9,7 @@ public:
 	vi arr;
 
 	BIT(int n){
-		arr.assign(n,0);
+		arr.assign(n+1,0);
 	}
 
 	void update(int val, int idx) {
@@ -20,7 +20,7 @@ public:
 	}
 
 	void create(vi &input) {
-		for(int i=1; i<arr.size(); i++){
+		for(int i=1; i<=input.size(); i++){
 			update(input[i-1],i);
 		}
 	}
@@ -40,12 +40,15 @@ public:
 };
 
 int main() {
-	vi input = {1,2,3,4,5,6,7};
-	vi input1 = {3,2,-1,6,5,4,-3,3,7,2,3};
-	BIT test(input1.size()+1);
-	test.create(input1);
-	for(auto x: test.arr) cout<<x<<" ";
-	cout<<endl;
-	cout<<test.sum(3)<<endl;
+	vector<int> arr = {1,2,3,4,5,6,7};
+	BIT tree(7);
+	tree.create(arr);
+	for(int i = 0; i < 7; i++) cout << tree.sum(i) << endl;
+	vector<int> arr1 = {1, 3,5};
+	BIT t(3);
+	t.create(arr1);
+	for(int i = 0; i < 3; i++) cout << t.sum(i) << endl;
+	t.update(1, -1);
+	cout <<t.sum(2) << endl; 
 	return 0;
 }

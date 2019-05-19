@@ -13,19 +13,6 @@ typedef long long i64;
 class Solution {
 public:
   vector<int> beautifulArray(int N) {
-   	// vector<int> res = {1};
-   	// while(res.size() < N) {
-   	// 	vector<int> tp;
-   	// 	int k = res.size();
-   	// 	for(int i = 0; i < k; i++){
-   	// 		if(res[i] * 2 <= N) tp.pb(res[i] * 2);
-   	// 	}
-   	// 	for(int i = 0; i < k; i++){
-   	// 		if(res[i] * 2 - 1 <= N) tp.pb(res[i] * 2 - 1);
-   	// 	}
-   	// 	res = tp;
-   	// }
-   	vector<int> curr = {};
    	return go(N, N);	   
   }
 

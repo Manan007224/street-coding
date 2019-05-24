@@ -4,11 +4,9 @@ https://leetcode.com/problems/sort-characters-by-frequency/
 https://leetcode.com/problems/k-closest-points-to-origin/
 https://leetcode.com/problems/create-maximum-number/
 https://leetcode.com/problems/count-numbers-with-unique-digits/
-https://leetcode.com/problems/lru-cache/
 https://leetcode.com/problems/max-chunks-to-make-sorted/
 https://leetcode.com/problems/maximum-frequency-stack/
 https://leetcode.com/problems/elimination-game/
-https://leetcode.com/problems/flip-string-to-monotone-increasing/
 https://leetcode.com/problems/strong-password-checker/
 https://leetcode.com/problems/check-completeness-of-a-binary-tree/
 https://leetcode.com/problems/knight-probability-in-chessboard/
@@ -18,7 +16,6 @@ https://leetcode.com/problems/random-point-in-non-overlapping-rectangles/
 https://leetcode.com/problems/find-k-closest-elements/
 https://leetcode.com/problems/find-right-interval/
 https://leetcode.com/problems/random-pick-with-weight/
-https://leetcode.com/problems/koko-eating-bananas/
 https://leetcode.com/problems/online-election/solution/
 https://leetcode.com/problems/queue-reconstruction-by-height/
 https://leetcode.com/problems/k-closest-points-to-origin/
@@ -55,6 +52,14 @@ https://leetcode.com/problems/repeated-dna-sequences/
 https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/
 https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
 https://leetcode.com/problems/score-of-parentheses/
+https://leetcode.com/problems/remove-duplicate-letters/
+https://leetcode.com/problems/count-of-smaller-numbers-after-self/
+https://leetcode.com/problems/basic-calculator/
+https://leetcode.com/problems/the-skyline-problem/
+https://leetcode.com/problems/number-of-atoms/
+https://leetcode.com/problems/my-calendar-iii/
+https://leetcode.com/problems/range-module/
+https://leetcode.com/problems/falling-squares/
 
 dp-stuff
 https://leetcode.com/problems/count-the-repetitions/
@@ -74,8 +79,5 @@ https://leetcode.com/problems/minimize-malware-spread-ii/
 
 tomorrow
 https://leetcode.com/problems/lfu-cache/
-https://leetcode.com/contest/weekly-contest-135/problems/binary-search-tree-to-greater-sum-tree/
 https://leetcode.com/contest/weekly-contest-135/problems/minimum-score-triangulation-of-polygon/
 https://leetcode.com/contest/weekly-contest-135/problems/moving-stones-until-consecutive-ii/
-https://leetcode.com/contest/weekly-contest-134/problems/coloring-a-border/
-https://leetcode.com/contest/weekly-contest-134/problems/uncrossed-lines/

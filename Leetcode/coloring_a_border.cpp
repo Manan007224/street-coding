@@ -12,25 +12,33 @@ typedef long long i64;
 
 class Solution {
 public:
-  int cl, ocl, x, y;
+  int ir, ic, r, c, color;
+  vvb v, g;
+  vector<pii> dir = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
   
   vector<vector<int>> colorBorder(vector<vector<int>>& grid, int r0, int c0, int color) {
-  	cl = color;
- 		ocl = grid[r0][c0];
- 		x = r0, y = c0;
-    vii g = grid;
-  	vvb v(grid.size(), vb(grid[0].size(), 0));
-  	bool res = dfs(g, v, r0, c0);
-    return g;
+    g = grid;
+    color = grid[r0][c0];
+    r = grid.size(), c = grid[0].size();
+    v = vvb(r, vb(c));
+    dfs(r, c);
   }
 
-  bool dfs(vii &g, vvb &v, int r, int c) {
-  	int m = g.size(), n = g[0].size();
-  	if(r < 0 || r >= m || c < 0 || c >= n || g[r][c] != ocl) return 0;
- 	 	if(v[r][c]) return 1;
- 	 	v[r][c] = 1;
- 	 	if(dfs(g,v,r+1,c) + dfs(g,v,r-1,c) + dfs(g,v,r,c+1)+ dfs(g,v,r,c-1) < 4)
- 	 		grid[r][c] = cl;
- 	 	return 1;
+  bool dfs(int x, int y) {
+    if(x<0 || y<0 || x>=r || y>=c) return 0;
+    bool is_border = 0, not_same = 0;
+    v[x][y] = 1;
+    if(x==0 || x==r-1 || y==0 || y==c-1) is_border=1;
+    for(int i=1; i<4; i++) {
+      int xx = dir[i].fi + x, yy = dir[i].se + y;
+      if(!v[xx][yy] && g[xx][yy]=g[x][y]) {
+        if(!dfs(xx,yy)) not_same = 1;
+      }
+    }
+    if(not_same || is_border) {
+      g[x][y] = color;
+      return 1;
+    }
+    return 0;
   }
 };

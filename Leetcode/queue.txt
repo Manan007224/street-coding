@@ -1,9 +1,6 @@
 https://leetcode.com/problems/subarrays-with-k-different-integers/
 https://leetcode.com/problems/kth-largest-element-in-an-array/
-https://leetcode.com/problems/sort-characters-by-frequency/
 https://leetcode.com/problems/create-maximum-number/
-https://leetcode.com/problems/count-numbers-with-unique-digits/
-https://leetcode.com/problems/max-chunks-to-make-sorted/
 https://leetcode.com/problems/maximum-frequency-stack/
 https://leetcode.com/problems/elimination-game/
 https://leetcode.com/problems/strong-password-checker/
@@ -12,7 +9,6 @@ https://leetcode.com/problems/knight-probability-in-chessboard/
 https://leetcode.com/problems/median-of-two-sorted-arrays/
 https://leetcode.com/problems/count-complete-tree-nodes/
 https://leetcode.com/problems/random-point-in-non-overlapping-rectangles/
-https://leetcode.com/problems/find-k-closest-elements/
 https://leetcode.com/problems/find-right-interval/
 https://leetcode.com/problems/random-pick-with-weight/
 https://leetcode.com/problems/online-election/solution/
@@ -61,6 +57,8 @@ https://leetcode.com/problems/range-module/
 https://leetcode.com/problems/falling-squares/
 https://leetcode.com/problems/minimum-cost-to-merge-stones/
 https://leetcode.com/problems/interleaving-string/
+https://leetcode.com/problems/check-completeness-of-a-binary-tree/
+https://leetcode.com/problems/count-complete-tree-nodes/
 
 dp-stuff
 https://leetcode.com/problems/count-the-repetitions/

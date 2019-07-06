@@ -16,7 +16,7 @@ public:
   	int n = nums.size();
   	int sum = 0;
   	for(auto n: nums) sum += n;
-  	// if(sum % 2 != 0) return false;
+  	if(sum % 2 != 0) return false;
   	sum /= 2;
   	vector<vector<bool>> dp(n+1, vector<bool>(sum+1, 0));
   	for(int i=0; i<=n; i++) dp[i][0]=1;

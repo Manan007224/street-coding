@@ -12,13 +12,15 @@ Node* flatten(Node *curr) {
 	if(down) {
 		curr->right = down;
 		curr->down = NULL;
-		curr = flatten(curr->right);
+		curr = curr->right;
+		curr = flatten(curr);
 
 	}
 	if(right) {
 		curr->right = right;
 		curr->down = NULL;
-		curr = flatten(curr->right);
+		curr = curr->right;
+		curr = flatten(curr);
 	}
 	return curr;
 }

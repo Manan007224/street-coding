@@ -32,6 +32,9 @@ public:
   	for(int i=0; i<n; i++) {
   		if(clips[i][1]>=T) res = min(res, dp[i]); 
   	}
+    for(int i=0; i<n; i++) {
+      cout << "(" << clips[i][0] << " " << clips[i][1] << ") => " << dp[i] << endl;
+    }
   	return res == INT_MAX ? -1 : static_cast<int>(res);    
   }
 };

@@ -1,36 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef vector<int> lst;
-
-int jumps(int s, lst &nums, lst &dp){
-	if(s>=nums.size()-1)
-		return 0;
-	if(dp[s]!=-1)
-		return dp[s];
-	int small=nums.size()+10000;
-	for(int k=1;k<=nums[s];k++){
-		int ans=jumps(s+k,nums,dp)+1;
-		small=min(ans,small);
-	}
-	dp[s]=small;
-	return small;
-}
-
 class Solution {
 public:
-    int jump(lst& nums) {
-    	if(nums[0]==25000&&nums[nums.size()-1]==0)
-    		return 2;
-    	lst dp(nums.size(),-1);
-        return jumps(0,nums,dp);
-    }
+  int jump(vector<int> &nums) {
+  	int n = nums.size(), jp = 0, pos = 0;
+  	while(pos < n - 1) {
+  		int next_pos = pos;
+  		jp++;
+  		for(int i = 0; i <= nums[pos]; i++) {
+  			int tp = i + pos;
+  			if(tp >= n - 1) return jp;
+  			next_pos = max(next_pos, nums[tp] + tp);
+  		}
+  		pos = next_pos;
+  	}
+  	return jp;
+  }
 };
 
 
-int main(){
-	lst steps={2};
+int main() {
+	vector<int> p = {2, 3, 1, 1, 4};
 	Solution sln;
-	cout<<sln.jump(steps)<<endl;
+	cout << sln.jump(p) << endl;
 	return 0;
 }

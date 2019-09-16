@@ -1,18 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
-#include <bits/stdc++.h>
-using namespace std;
-typedef vector<int> vi;
-typedef vector<vi> vii;
-typedef pair<int,int> pii;
-typedef long long i64;
-#define pb push_back
-#define fi first
-#define se second
 
 class Solution {
 public:
-	bool is_digit(char c) {return (c>='0' && c<='9');}
+	bool is_digit(char c) {
+    return (c>='0' && c<='9');
+  }
 
   int evaluate(string expression) {
   	unordered_map<string,int> sym_table;

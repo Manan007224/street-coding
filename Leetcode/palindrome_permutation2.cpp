@@ -48,7 +48,7 @@ int main() {
 	string r2 = "aaa";
 	string r3 = "aabcbaa";
 	Solution sln;
-	vs res = sln.generatePalindromes(r3);
+	vs res = sln.generatePalindromes(r);
 	for(auto r: res) cout<<r<<endl;
 	return 0;
 }

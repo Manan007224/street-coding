@@ -1,32 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef vector<int> vi;
-typedef vector<double> vi_32;
-typedef vector<vi_32> vii_32;
-typedef vector<vi> vii;
-typedef pair<int,int> pii;
-typedef long long i64;
-#define pb push_back
-#define fi first
-#define se second
 
 class Solution {
 public:
   int maxWidthRamp(vector<int>& A) {
-  	int n = A.size();
-  	stack<int> st;
-  	st.push(0);
-  	int res = 0;
-  	for(int i=1; i<n; i++) {
-  		if(A[st.top()] > A[i]) st.push(i);
-  	}
-  	for(int i=n-1; i>=0; i--) {
-  		while(!st.empty() && A[st.top()]<=A[i]) {
-  			res = max(res, i-st.top());
-  			st.pop();
-  		}
-  	}
-  	return res;    
+  	int n = A.size(), lo, hi;
+    vector<int> st;
+    int res = 0;
+    for(int i=0; i<n; i++) {
+      if(st.size()!=0 && A[st[st.size()-1]]<=A[i]) {
+        lo = 0, hi = n-1;
+        while(lo < hi) {
+          int mid = lo + (hi-lo)/2;
+          A[i] < A[st[mid]] ? lo = mid+1 : hi = mid;
+        }
+        res = max(res, i-st[lo]);  
+      }
+      else st.push_back(i);  
+    }    
   }
 };
 

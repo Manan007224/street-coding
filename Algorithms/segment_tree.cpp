@@ -2,18 +2,13 @@
 using namespace std;
 typedef vector<int> vi;
 
-class Segmentinput {
+class SegTree {
 public:
 	vi tree, lazy;
 
-	Segmentinput(int n) {
-		int x;
-		if(n!=0 && (n & (n-1)) == 0) x = n;
-		else {
-			while(x<=n) x = x<<1;
-		}
-		tree.assign(x*2-1,INT_MAX);
-		lazy.assign(x*2-1,0);
+	SegTree(int n) {
+		tree.assign(4*n-1,INT_MIN);
+		lazy.assign(4*n-1,0);
 	}
 
 	void create(vi &input) {
@@ -28,7 +23,7 @@ public:
 		int mid = (lo+hi)/2;
 		create_helper(input,lo,mid,2*pos+1);
 		create_helper(input,mid+1,hi,2*pos+2);
-		tree[pos] = min(tree[2*pos+1],tree[2*pos+2]);
+		tree[pos] = max(tree[2*pos+1],tree[2*pos+2]);
 	}
 
 	int range_min(int qlo, int qhi) {
@@ -37,11 +32,11 @@ public:
 
 	int rm_helper(int qlo, int qhi, int lo, int hi, int pos) {
 		if(qlo <= lo && qhi >= hi) return tree[pos]; // total overlap
-		if(qlo > hi || qhi < lo) return INT_MAX; // no overlap
+		if(qlo > hi || qhi < lo) return INT_MIN; // no overlap
 		int mid = (lo+hi)/2;
 		int left = rm_helper(qlo, qhi, lo, mid, pos*2+1);
 		int right = rm_helper(qlo, qhi, mid+1, hi, pos*2+2);
-		return min(left,right);
+		return max(left,right);
 	}
 
 	int range_min_lazy(int qlo, int qhi, int size) {
@@ -49,7 +44,7 @@ public:
 	}
 
 	int rml_helper(int qlo, int qhi, int lo, int hi, int pos) {
-		if(lo > hi) return INT_MAX;
+		if(lo > hi) return INT_MIN;
 
 		// If we haven't done propogation at this time
 		if(lazy[pos]!=0) {
@@ -61,12 +56,12 @@ public:
 			lazy[pos] = 0; 
 		}
 
-		if(qlo > hi || qhi < lo) return INT_MAX; // no overlap
+		if(qlo > hi || qhi < lo) return INT_MIN; // no overlap
 		if(qlo <= lo && qhi >= hi) return tree[pos]; // total overlap
 		int mid = (lo+hi)/2;
 		int left = rml_helper(qlo, qhi, lo, mid, pos*2+1);
 		int right = rml_helper(qlo, qhi, mid+1, hi, pos*2+2);
-		return min(left,right);
+		return max(left,right);
 	}
 
 	void update_lazy(int qlo, int qhi, int diff, int size) {
@@ -102,15 +97,15 @@ public:
 		int mid = (lo+hi)/2;
 		ul_helper(qhi, qlo, diff, lo, mid, pos*2+1);
 		ul_helper(qhi, qlo, diff, mid+1, hi, pos*2+2);
-		tree[pos] = min(tree[pos*2+1], tree[pos*2+2]);
+		tree[pos] = max(tree[pos*2+1], tree[pos*2+2]);
 	}
 };
 
 int main() {
 	vi t = {-1,2,4,0};
 	vi t1 = {2,3,-1,4};
-	Segmentinput test(t.size());
-	Segmentinput test1(t1.size());
+	SegTree test(t.size());
+	SegTree test1(t1.size());
 	test.create(t);
 	test1.create(t1);
 	cout<<test.range_min(1,3)<<endl;

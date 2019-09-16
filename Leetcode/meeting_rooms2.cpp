@@ -22,7 +22,8 @@ class Solution {
 public:
     int minMeetingRooms(vector<Interval>& intervals) {
     	if(intervals.size()==0) return 0;
-        //sort(intervals.begin(), intervals.end(), icomapre);
+        sort(intervals.begin(), intervals.end(), icomapre);
+        for(auto it: intervals) cout << it.start << " " << it.end << endl;
         priority_queue<Interval, vector<Interval>, compare> q;
         int rooms=1;
         q.push(intervals[0]);
@@ -47,7 +48,7 @@ int main(){
 	auto a7=Interval(9,11);
 	auto a8=Interval(13,15);
 	Solution sln;
-	vector<Interval> test={a6,a7,a8};
+	vector<Interval> test={a1,a2,a3,a4,a5,a6,a7,a8};
 	cout<<sln.minMeetingRooms(test)<<endl;
 	return 0;
 }
